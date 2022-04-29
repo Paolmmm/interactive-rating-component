@@ -1,0 +1,171 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.6rem;
+  position: relative;
+
+  font-family: sans-serif;
+  background-color: hsl(216, 12%, 8%);
+  color: hsl(0, 0%, 100%);
+  height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.container {
+  visibility: hidden;
+  opacity: 1;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  transition: 1s cubic-bezier(0.66, -0.44, 0.69, 1.58) transform;
+  background: radial-gradient(
+    ellipse at top,
+    hsl(220, 8%, 23%),
+    hsl(213, 19%, 18%)
+  );
+  padding: 2.6rem;
+  border-radius: 20px;
+  min-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .star {
+    background: hsl(213, 19%, 18%);
+    padding: 1.2rem;
+    border-radius: 100px;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .thankYou {
+    width: 10rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  p,
+  ul {
+    color: hsl(217, 12%, 63%);
+    font-size: 1.5rem;
+  }
+
+  p {
+    line-height: 1.4;
+    width: 30rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    padding: 1.6rem 2rem;
+    background: hsl(213, 19%, 18%);
+    border-radius: 100px;
+    transition: 0.2s all;
+
+    &:hover {
+      @extend %hoverPH;
+    }
+  }
+
+  button {
+    background-color: hsl(25, 97%, 53%);
+    border: none;
+    color: inherit;
+    border-radius: 100px;
+    padding: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: 0.2s all;
+    font-weight: 700;
+
+    &:hover {
+      @extend %hoverPH;
+    }
+  }
+}
+
+.container--voted {
+  text-align: center;
+  align-items: center;
+
+  .tag {
+    color: hsl(25, 97%, 53%);
+    background: hsl(213, 19%, 18%);
+    border-radius: 100px;
+    padding: 0.5rem 1.6rem;
+    width: fit-content;
+  }
+}
+
+// UTILITIES E HELPER CLASSES
+
+%hoverPH {
+  cursor: pointer;
+  background: hsl(0, 0%, 100%) !important;
+  color: hsl(25, 97%, 53%);
+}
+
+.hoverState {
+  @extend %hoverPH;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+// EXPERIMENT
+
+// .experiment {
+//   width: 5rem;
+//   height: 5rem;
+//   border-radius: 10px;
+//   position: absolute;
+//   transition: 1s cubic-bezier(0.66, -0.44, 0.69, 1.58) transform, opacity 1s;
+//   transform: scale(0.2);
+
+//   &:hover {
+//     cursor: pointer;
+//   }
+
+//   &--1 {
+//     background: red;
+//     z-index: 2;
+//     opacity: 0;
+//   }
+
+//   &--2 {
+//     background: green;
+//   }
+// }
+
+// .act {
+//   transform: scale(1);
+//   opacity: 1;
+// }
